@@ -1,0 +1,1 @@
+import{a as t}from"./chunk-4WY6JWTD-NS4yDDl0.js";function i(){const r=t.useRef(null),[n,o]=t.useState(!1);return t.useEffect(()=>{const s=r.current;if(!s)return;const e=new IntersectionObserver(c=>{c.forEach(u=>{u.isIntersecting&&(o(!0),e.disconnect())})},{threshold:.2});return e.observe(s),()=>e.disconnect()},[]),{ref:r,showed:n}}export{i as u};
