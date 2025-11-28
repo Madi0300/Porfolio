@@ -5,6 +5,8 @@ export type ProjectContentBlock =
   | { type: "subtitle"; text: string }
   | { type: "text"; text: string }
   | { type: "image"; imgSrc: string; alt?: string; caption?: string }
+  | { type: "link"; href: string; label: string; description?: string }
+  | { type: "video"; src: string; caption?: string; poster?: string }
   | { type: "list"; subtitle: string; list: string[] };
 
 type ProjectContentProps = {
@@ -39,6 +41,45 @@ export default function ProjectContent({ blocks }: ProjectContentProps) {
           );
         }
 
+        if (block.type === "link") {
+          return (
+            <div key={index} className={style.ProjectContent__linkBlock}>
+              <a
+                className={style.ProjectContent__link}
+                href={block.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {block.label}
+              </a>
+              {block.description ? (
+                <p className={style.ProjectContent__linkDescription}>
+                  {block.description}
+                </p>
+              ) : null}
+            </div>
+          );
+        }
+
+        if (block.type === "video") {
+          return (
+            <figure key={index} className={style.ProjectContent__videoFigure}>
+              <video
+                className={style.ProjectContent__video}
+                controls
+                preload="metadata"
+                src={block.src}
+                poster={block.poster}
+              />
+              {block.caption ? (
+                <figcaption className={style.ProjectContent__videoCaption}>
+                  {block.caption}
+                </figcaption>
+              ) : null}
+            </figure>
+          );
+        }
+
         if (block.type === "image") {
           return (
             <figure key={index} className={style.ProjectContent__figure}>
@@ -59,7 +100,9 @@ export default function ProjectContent({ blocks }: ProjectContentProps) {
 
         return (
           <div key={index} className={style.ProjectContent__listBlock}>
-            <h3 className={style.ProjectContent__listTitle}>{block.subtitle}</h3>
+            <h3 className={style.ProjectContent__listTitle}>
+              {block.subtitle}
+            </h3>
             <ul className={style.ProjectContent__list}>
               {block.list.map((item, itemIndex) => (
                 <li key={itemIndex} className={style.ProjectContent__listItem}>

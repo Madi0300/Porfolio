@@ -51,6 +51,15 @@ const contentBlocks: ProjectContentBlock[] = [
     type: "text",
     text: "Прототип сейчас собирает задание за ~5–7 секунд. Цель — держать время ответа <10 секунд и улучшать подсказки/валидацию без ощущения задержек.",
   },
+  {
+    type: "text",
+    text: "Ниже короткое видео с демонстрацией интерфейса и генерации упражнений.",
+  },
+  {
+    type: "video",
+    src: "https://res.cloudinary.com/dmcwpaxip/video/upload/v1764328786/Video_Project_pnmqqz.mp4",
+    caption: "Демо: создание задания, просмотр карточек и фиксация прогресса в профиле.",
+  },
 ];
 
 export function meta({}: Route.MetaArgs) {

@@ -65,6 +65,15 @@ const contentBlocks: ProjectContentBlock[] = [
     type: "text",
     text: "Каталог открывается без рывков, фильтры применяются мгновенно. Время до первого взаимодействия на мобильных сократилось, а удержание выросло благодаря стабильной корзине и лёгким переходам.",
   },
+  {
+    type: "text",
+    text: "Вот видео с демонстрацией работы сайта.",
+  },
+  {
+    type: "video",
+    src: "https://res.cloudinary.com/dmcwpaxip/video/upload/f_auto,q_auto/v1764312134/GGPromarketDemoVideo_wlscth.mp4",
+    caption: "Видео по мотивам пользовательских сценариев: поиск, фильтры, корзина и быстрые переходы.",
+  },
 ];
 
 export function meta({}: Route.MetaArgs) {

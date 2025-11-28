@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import style from "./Navigation.module.scss";
+import { KWORK_URL } from "../KworkButton";
 
 type NavigationProps = {
   onNavigate: (id: string) => void;
@@ -40,7 +41,14 @@ export default function Navigation({ onNavigate }: NavigationProps) {
           className={style.Navigation__brand}
           onClick={() => handleNavigate("hero")}
         >
-          <span className={style.Navigation__badge}>MA</span>
+          <span className={style.Navigation__badge}>
+            <img
+              src="/avatar/avatar.webp"
+              alt="Madi Aitbay"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
           <span className={style.Navigation__name}>Madi Aitbay</span>
         </button>
 
@@ -55,14 +63,15 @@ export default function Navigation({ onNavigate }: NavigationProps) {
               {item.label}
             </button>
           ))}
-          <button
-            type="button"
+          <a
             className={style.Navigation__cta}
-            onClick={() => handleNavigate("contact")}
+            href={KWORK_URL}
+            target="_blank"
+            rel="noreferrer"
           >
             Обсудить проект
             <ArrowRight size={16} />
-          </button>
+          </a>
         </div>
 
         <button
@@ -90,14 +99,15 @@ export default function Navigation({ onNavigate }: NavigationProps) {
             {item.label}
           </button>
         ))}
-        <button
-          type="button"
+        <a
           className={style.Navigation__mobileCta}
-          onClick={() => handleNavigate("contact")}
+          href={KWORK_URL}
+          target="_blank"
+          rel="noreferrer"
         >
           Обсудить проект
           <ArrowRight size={16} />
-        </button>
+        </a>
       </div>
     </nav>
   );

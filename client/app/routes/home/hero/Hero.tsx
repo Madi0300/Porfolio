@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import style from "./Hero.module.scss";
-import { KworkIcon } from "@/app/routes/home/KworkButton";
+import { KworkIcon, KWORK_URL } from "@/app/routes/home/KworkButton";
 import { useReveal } from "../useReveal";
 
 type HeroProps = {
@@ -47,9 +47,15 @@ export default function Hero({ onNavigate }: HeroProps) {
         </p>
 
         <div className={style.Hero__actions}>
-          <div className={style.Hero__kworkIcon}>
+          <a
+            className={style.Hero__kworkIcon}
+            href={KWORK_URL}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Профиль Kwork"
+          >
             <KworkIcon />
-          </div>
+          </a>
           {/* <button
             type="button"
             className={style.Hero__primary}

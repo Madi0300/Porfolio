@@ -66,6 +66,28 @@ const contentBlocks: ProjectContentBlock[] = [
     type: "text",
     text: "Прототипы готовы: единая библиотека секций, адаптив работает, загрузка лёгкая. Использую как базу для новых лендингов и дальнейших тестов.",
   },
+  {
+    type: "subtitle",
+    text: "Деплой",
+  },
+  {
+    type: "link",
+    label: "GameLanding — живой демо",
+    href: "https://madi0300.github.io/GameLanding/",
+    description: "Игровой лендинг с динамическими блоками и выделенной зоной для CTA.",
+  },
+  {
+    type: "link",
+    label: "Relvice — живой демо",
+    href: "https://madi0300.github.io/Relvice/",
+    description: "Корпоративный лендинг: баланс между блоками доверия и формами консультации.",
+  },
+  {
+    type: "link",
+    label: "TealuxLanding — живой демо",
+    href: "https://madi0300.github.io/TealuxLanding/",
+    description: "Продуктовая страница для бренда чая: карточки, витрина и описание подписки.",
+  },
 ];
 
 export function meta({}: Route.MetaArgs) {

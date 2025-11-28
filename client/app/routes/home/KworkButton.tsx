@@ -1,6 +1,6 @@
 import styles from "./KworkButton.module.scss";
 
-const DEFAULT_KWORK_URL = "https://kwork.ru";
+const DEFAULT_KWORK_URL = "https://kwork.ru/user/madi_aitbai";
 const KWORK_LOGO_SRC = "/kwork/kwork-logo.svg";
 
 export const KWORK_URL =
